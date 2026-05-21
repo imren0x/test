@@ -47,7 +47,7 @@ jobs:
           plugin_anilist_limit: 2
           plugin_anilist_limit_characters: 22
           plugin_anilist_shuffle: no
-          plugin_anilist_user: Misaka13514
+          plugin_anilist_user: AmeMika
           plugin_rss: yes
           plugin_rss_limit: 3
           plugin_rss_source: https://pool.pages.dev/atom.xml
@@ -68,4 +68,4 @@ jobs:
           plugin_anilist_limit: 1
           plugin_anilist_limit_characters: 22
           plugin_anilist_shuffle: no
-          plugin_anilist_user: Misaka13514
+          plugin_anilist_user: AmeMika
