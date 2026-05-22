@@ -53,7 +53,7 @@ jobs:
           plugin_rss_source: https://pool.pages.dev/atom.xml
 
       - name: Anilist
-        uses: plugin_anilist_sections: favorites,watching,characters
+        uses: lowlighter/metrics@latest
         with:
           filename: anilist.svg
           token: ${{ secrets.METRICS_TOKEN }}
