@@ -1,9 +1,12 @@
 #!/bin/bash
 
-ANDROID_BUILD_TOP="$(dirname $(realpath "$0"))"
-CHECK="$(echo $1 | grep -q check && echo 1)"
+#!/bin/bash
 
-# Menggunakan HTTPS (Publik, tanpa perlu akun SSH Gerrit)
+if [ -z "$ANDROID_BUILD_TOP" ]; then
+    ANDROID_BUILD_TOP="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+fi
+
+CHECK="$(echo $1 | grep -q check && echo 1)"
 GERRIT_URL="https://review.lineageos.org"
 
 function repopick() {
