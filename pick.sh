@@ -1,10 +1,11 @@
 #!/bin/bash
 
-#!/bin/bash
-
 if [ -z "$ANDROID_BUILD_TOP" ]; then
-    ANDROID_BUILD_TOP="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+    ANDROID_BUILD_TOP="$(pwd)"
 fi
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+GEN_CHAIN="${SCRIPT_DIR}/gen_chain"
 
 CHECK="$(echo $1 | grep -q check && echo 1)"
 GERRIT_URL="https://review.lineageos.org"
@@ -21,12 +22,12 @@ function repopickchain() {
     if [[ "$CHECK" = "1" ]]; then
         echo -n "$1 - " ; curl -s "$GERRIT_URL/changes/$1/detail" | sed '1s/^)]}'\''//' | jq -r '.status'
     else
-        ${ANDROID_BUILD_TOP}/gen_chain $@
+        ${GEN_CHAIN} $@
     fi
 }
 
 function rc() {
-    echo `${ANDROID_BUILD_TOP}/gen_chain $@ | cut -b10-`
+    echo `${GEN_CHAIN} $@ | cut -b10-`
 }
 
 # bionic
