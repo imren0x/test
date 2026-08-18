@@ -138,9 +138,6 @@ repopickchain 490899 # audio: Allow opting out of speaker_layout_channel_mask fi
 # system/netd
 repopickchain 490902 # VPN-covered DNS traffic may not fall through
 
-# system/security
-repopick 490903 # Handle key parameter conversion for FBE_ICE tag
-
 # system/sepolicy
 repopickchain 490921 # Add property to set secondary display orientation
 
